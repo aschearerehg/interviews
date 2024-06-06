@@ -1,3 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using UnityEngine;
+
 internal class Actor : MonoBehaviour
 {
 	public static List<Actor> AllActors = new List<Actor>();
@@ -13,13 +19,13 @@ internal class Actor : MonoBehaviour
 	public void TakeDamage(int damage)
 	{
 		_currentHealth -= damage;
-		ActorHealthChanged?.Invoke(this);
+		ActorHealthChanged.Invoke(this);
 		RecordHealthToServer();
 		
 		if (_currentHealth <= 0)
 		{
 			_isDead = true;
-			ActorDied?.Invoke(this);
+			ActorDied.Invoke(this);
 			RecordDeathToServer();
 		}
 	}
@@ -59,7 +65,7 @@ internal class Actor : MonoBehaviour
 	
 	Task RecordHealthToServerAsync(CancellationToken cancellationToken = default)
 	{
-		// this method makes a network call recording the health of the actor
+ 		// omitted for brevity but assume this is implemented correctly
 		throw new NotImplementedException();
 	}
 
@@ -77,7 +83,7 @@ internal class Actor : MonoBehaviour
 	
 	Task RecordDeathToServer(CancellationToken cancellationToken = default)
 	{
-		// this method makes a network call recording the death of the actor
+ 		// omitted for brevity but assume this is implemented correctly
 		throw new NotImplementedException();
 	}
 	
