@@ -66,7 +66,6 @@ internal class Actor : MonoBehaviour
 	Task RecordHealthToServerAsync(CancellationToken cancellationToken = default)
 	{
  		// omitted for brevity but assume this is implemented correctly
-		throw new NotImplementedException();
 	}
 
 	void RecordDeathToServer()
@@ -84,7 +83,6 @@ internal class Actor : MonoBehaviour
 	Task RecordDeathToServer(CancellationToken cancellationToken = default)
 	{
  		// omitted for brevity but assume this is implemented correctly
-		throw new NotImplementedException();
 	}
 	
 	// network message from server received on background thread, triggering this callback
